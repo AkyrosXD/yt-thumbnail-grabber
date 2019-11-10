@@ -1,2 +1,2 @@
 # yt-thumbnail-grabber
-YouTube Thumbnail Grabber
+A Python script to grab the thumbnail URL from a YouTube video.
