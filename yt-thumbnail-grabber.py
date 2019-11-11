@@ -1,15 +1,28 @@
 
-watch_url = "https://www.youtube.com/watch?v="
+watch_urls = [
+    "https://www.youtube.com/watch?v=",
+
+    "https://youtu.be/"
+]
 
 
 ###### functions
 
-def is_valid_url(url):
-        return url.startswith(watch_url) and len(url) > len(watch_url)
+def is_valid_url(url):    
+    valid = False
+
+    for watch_url in watch_urls:
+        if url.startswith(watch_url) and len(url) > len(watch_url):
+            valid = True
+    
+    return valid
 
 def get_video_id(url):
   
-    id_start_index = len(watch_url)
+    if url.startswith(watch_urls[0]):
+        id_start_index = len(watch_urls[0])
+    elif url.startswith(watch_urls[1]):
+        id_start_index = len(watch_urls[1])
 
     id_end_index = len(url)
 
